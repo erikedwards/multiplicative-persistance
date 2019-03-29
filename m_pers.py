@@ -14,8 +14,11 @@ def m_pers(n, step):
         m_pers(x, step + 1)
     else:
         print("Total Steps = " + str(step))
+        return int(step)
 
 
+'''
+# try a single number
 val = 1
 while int(val)>0:
     val = input("enter number")
@@ -23,5 +26,20 @@ while int(val)>0:
     print("0: " + str(val))
     m_pers(val, 1)
     val = input("1 to continue, 0 to quit")
+'''
 
 
+# try a range of numbers
+max = input("upper bound?: ")
+min = input("lower bound?: ")
+max_steps = 1
+max_val = 1
+
+for i in range(int(min), int(max) + 1):
+    print(i)
+    n = m_pers(i, 1)
+    if n > max_steps:
+        max_steps = n
+        max_val = i
+print("max steps = " + str(max_steps))
+print("number = " + str(max_val))
