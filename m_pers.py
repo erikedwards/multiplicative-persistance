@@ -16,7 +16,7 @@ def m_pers(n):
 
 val = 1
 
-while 1:
+while int(val)>0:
     val = input("enter number")
     print("starting conprutations")
     print(str(val))
