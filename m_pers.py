@@ -9,12 +9,13 @@ def m_pers(n, step):
     for i in range(len(str(n))):
         x *= int(str(n)[i-1])
     print(str(step) + ": " + str(x))
+    s = step
     if len(str(x)) > 1:
         # counter += 1
-        m_pers(x, step + 1)
+        s = m_pers(x, step + 1)
     else:
         print("Total Steps = " + str(step))
-        return int(step)
+    return s
 
 
 '''
@@ -36,10 +37,11 @@ max_steps = 1
 max_val = 1
 
 for i in range(int(min), int(max) + 1):
-    print(i)
+    print("0: " + str(i))
     n = m_pers(i, 1)
     if n > max_steps:
         max_steps = n
         max_val = i
+
 print("max steps = " + str(max_steps))
 print("number = " + str(max_val))
